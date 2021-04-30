@@ -157,38 +157,39 @@ void imprimirArreglo(int x[], int n){ //metodo para imrpimir arreglo
 }
 
 void trianguloPascal(int n, int max_n, int res_anterior[],int salida[]){
-	if(n==max_n){
-		/*for(int i=0; i<100; i++){
-			if(salida[i]!=0){
-				cout<<salida[i]<<" ";
+	if(n==max_n){//caso base
+		cout<<"1";
+			for(int i=0; i<100; i++){
+				res_anterior[i]=salida[i]; //guardo lo que hay actualmente en el arreglo 'salida', lo guardo en res_anterior
 			}
-		}
-		cout<<endl;
-		*/
-	}
-	else{
-		n++;
-		salida[0]=1;
-		if(n==1){//la primera vez solo imprimo el 1 que está en la primera posicion del arreglo
-			cout<<n<<endl;
-			trianguloPascal(n,max_n,res_anterior,salida);//vuelvo a entrar a la funcion 
-		}
-		else{
-			//n=2,3
-			cout<<salida[0]<<""; //siempre imprimo el primer 1
-			for(int i=1;i<n;i++){
-				salida[i]=salida[i]+n-1;
-				if(salida[i]!=0){
-					if(i==n-1){
-						cout<<"1";
-					}
-					else{
-						cout<<salida[i]-1;
-					}
-					
-				}
+			for(int i=1; i<=n; i++){
+				
+				salida[i]= salida[i] + res_anterior[i-1]; //para hacer uso de ese res_anterior aqui
+				cout<<salida[i];
 			}
 			cout<<endl;
+	}
+	else{
+		if(n==0){
+			salida[0]=1;
+			cout<<salida[0]<<endl;
+			res_anterior[0]=salida[0];
+			n++;
+			trianguloPascal(n,max_n,res_anterior,salida);
+		}
+		else{
+			//cout<<"aqui esta: "<<salida[1]<<endl;
+			cout<<"1";
+			for(int i=0; i<100; i++){
+				res_anterior[i]=salida[i]; //guardo lo que hay actualmente en el arreglo 'salida', lo guardo en res_anterior
+			}
+			for(int i=1; i<=n; i++){
+				
+				salida[i]= salida[i] + res_anterior[i-1]; //para hacer uso de ese res_anterior aqui
+				cout<<salida[i];
+			}
+			cout<<endl;
+			n++;
 			trianguloPascal(n,max_n,res_anterior,salida);
 		}
 		
