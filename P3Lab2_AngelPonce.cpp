@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 				int x[20];
 				srand(time(NULL));
 				for(int i=0; i<20; i++){
-					x[i]=1+rand()%(100);
+					x[i]=1+rand()%(100); //llenando el arreglo con numeros random de 1 al 100
 				}
 				imprimirArreglo(x,20);
 				cout<<desviacionEstandar(x)<<endl;
