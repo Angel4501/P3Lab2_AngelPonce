@@ -109,11 +109,11 @@ void graficosBarra(){//METODO DE EJERCICIO 3
 	for(int i=0; i<10; i++){
 		cout<<i+1;
 		for(int j=0; j<x[i]; j++){
-			cout<<c1;
+			cout<<c2;
 		}
 		cout<<endl;
 		for(int k=0; k<y[i]; k++){
-			cout<<c2;
+			cout<<c1;
 		}
 		cout<<endl;
 		cout<<endl;
